@@ -1,20 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  Brain, Globe, Shield, BarChart3, Clock, Headset,
-  Target, PhoneCall, MessageSquare, Zap, ShoppingCart, Users, Bell, TrendingUp,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import { getStaggerDelay } from '@/lib/utils';
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  Brain, Globe, Shield, BarChart3, Clock, Headset,
-  Target, PhoneCall, MessageSquare, Zap, ShoppingCart, Users, Bell, TrendingUp,
-};
+import * as Icons from 'lucide-react';
 
 interface Feature {
-  icon: string;
+  icon: string;  // Now accepts string name
   title: string;
   description: string;
   benefit: string;
@@ -42,7 +33,9 @@ export function SolutionFeatures({ title, subtitle, features }: SolutionFeatures
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
-            const FeatureIcon = ICON_MAP[feature.icon];
+            // Resolve icon from string name
+            const IconComponent = (Icons as any)[feature.icon] || Icons.Zap;
+            
             return (
               <motion.div
                 key={feature.title}
@@ -53,7 +46,7 @@ export function SolutionFeatures({ title, subtitle, features }: SolutionFeatures
                 transition={{ delay: getStaggerDelay(index, 0.08), duration: 0.5 }}
               >
                 <div className="h-12 w-12 rounded-xl bg-brand-purple/10 flex items-center justify-center mb-4 group-hover:bg-brand-purple/20 transition-colors">
-                  {FeatureIcon && <FeatureIcon className="h-6 w-6 text-brand-purple" />}
+                  <IconComponent className="h-6 w-6 text-brand-purple" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
                 <p className="text-sm text-text-secondary mb-3">{feature.description}</p>

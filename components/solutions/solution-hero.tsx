@@ -1,17 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  Play, MessageSquare, TrendingUp, Headset, Phone, MessageCircle,
-} from 'lucide-react';
+import { Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AnimatedCounter } from '@/components/ui/animated-counter';
-import type { LucideIcon } from 'lucide-react';
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  MessageSquare, TrendingUp, Headset, Phone, MessageCircle,
-};
+import * as Icons from 'lucide-react';
 
 interface Metric {
   label: string;
@@ -19,7 +13,7 @@ interface Metric {
 }
 
 interface SolutionHeroProps {
-  icon: string;
+  icon: string;  // Now accepts string name
   title: string;
   subtitle: string;
   description: string;
@@ -37,7 +31,9 @@ export function SolutionHero({
   primaryCTA,
   secondaryCTA,
 }: SolutionHeroProps) {
-  const Icon = ICON_MAP[icon];
+  // Resolve icon from string name
+  const IconComponent = (Icons as any)[icon] || Icons.Zap;
+
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -53,7 +49,7 @@ export function SolutionHero({
             transition={{ duration: 0.7 }}
           >
             <Badge variant="purple" className="mb-6">
-              <Icon className="h-3.5 w-3.5" />
+              <IconComponent className="h-3.5 w-3.5" />
               AI Solution
             </Badge>
 
@@ -69,7 +65,8 @@ export function SolutionHero({
               <Button variant="gold" size="xl" showArrow href={primaryCTA.href}>
                 {primaryCTA.label}
               </Button>
-              <Button variant="secondary" size="xl" href={secondaryCTA.href} icon={Play}>
+              <Button variant="secondary" size="xl" href={secondaryCTA.href}>
+                <Play className="h-4 w-4" />
                 {secondaryCTA.label}
               </Button>
             </div>
@@ -94,7 +91,7 @@ export function SolutionHero({
           >
             <div className="relative">
               <div className="w-80 h-80 rounded-3xl bg-gradient-to-br from-brand-purple/20 to-brand-blue/10 glass flex items-center justify-center">
-                <Icon className="h-32 w-32 text-brand-purple/30" />
+                <IconComponent className="h-32 w-32 text-brand-purple/30" />
               </div>
               <div className="absolute -top-4 -right-4 h-20 w-20 rounded-2xl bg-brand-gold/10 glass flex items-center justify-center animate-float">
                 <span className="text-2xl font-bold text-brand-gold">+60%</span>
