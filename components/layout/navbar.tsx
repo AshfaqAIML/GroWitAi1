@@ -62,16 +62,16 @@ export function Navbar() {
             ))}
           </div>
 
-          // Desktop Actions
-<div className="hidden lg:flex items-center gap-3">
-  <ThemeToggle />
-  <Button variant="secondary" size="sm" href="#contact">
-    Contact Sales
-  </Button>
-  <Button variant="gold" size="sm" showArrow href="#demo">
-    Book Demo
-  </Button>
-</div>
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
+            <Button variant="secondary" size="sm" href="/#contact">
+              Contact Sales
+            </Button>
+            <Button variant="gold" size="sm" showArrow href="/#demo">
+              Book Demo
+            </Button>
+          </div>
 
           {/* Mobile Toggle */}
           <div className="flex lg:hidden items-center gap-2">

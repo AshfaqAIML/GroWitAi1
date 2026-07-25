@@ -56,12 +56,12 @@ export function MobileNav({ isOpen, onClose, items }: MobileNavProps) {
             </nav>
 
             <div className="mt-8 flex flex-col gap-3">
-              <Button variant="secondary" className="w-full" href="#contact" onClick={onClose}>
-  Contact Sales
-</Button>
-<Button variant="gold" className="w-full" showArrow href="#demo" onClick={onClose}>
-  Book Demo
-</Button>
+              <Button variant="secondary" className="w-full" href="/#contact" onClick={onClose}>
+                Contact Sales
+              </Button>
+              <Button variant="gold" className="w-full" showArrow href="/#demo" onClick={onClose}>
+                Book Demo
+              </Button>
             </div>
           </motion.div>
         </motion.div>
