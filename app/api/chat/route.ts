@@ -79,10 +79,10 @@ export async function POST(request: Request) {
     const reply = result.response.text();
 
     return NextResponse.json({ reply });
-  } catch (error) {
-    console.error('Gemini API error:', error);
+  } catch (error: any) {
+    console.error('Gemini API error:', error?.message || error);
     return NextResponse.json(
-      { reply: 'Sorry, I encountered an error. Please try again or email us at hello@growithai.com.' },
+      { reply: `Sorry, the AI service is unavailable. Error: ${error?.message || 'Unknown'}` },
       { status: 500 }
     );
   }

@@ -236,12 +236,13 @@ export function ChatbotWidget() {
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMsg]);
-    } catch {
+    } catch (err) {
+      console.error('Chat API error:', err);
       const fallback = generateResponse(messageText);
       const botMsg: Message = {
         id: (Date.now() + 1).toString(),
         role: 'bot',
-        content: fallback,
+        content: `[AI Offline] ${fallback}`,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMsg]);
