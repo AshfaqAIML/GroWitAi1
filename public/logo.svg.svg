@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <rect width="40" height="40" rx="10" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+      <stop offset="0%" stop-color="#6C3BFF"/>
+      <stop offset="100%" stop-color="#4422C8"/>
+    </linearGradient>
+  </defs>
+  <text x="20" y="27" text-anchor="middle" fill="white" font-family="system-ui" font-weight="700" font-size="20">G</text>
+</svg>
