@@ -32,23 +32,33 @@ export const SITE_CONFIG = {
 export const NAV_ITEMS: NavItem[] = [
   {
     label: 'Solutions',
-    href: '#solutions',
+    href: '/#solutions',
     children: [
-      { label: 'AI Chatbots', href: '#chatbots' },
-      { label: 'AI Voice Agents', href: '#voice-agents' },
-      { label: 'AI Receptionists', href: '#receptionists' },
-      { label: 'AI Sales Assistants', href: '#sales-assistants' },
-      { label: 'WhatsApp Automation', href: '#whatsapp' },
-      { label: 'CRM Automation', href: '#crm' },
-      { label: 'Workflow Automation', href: '#workflow' },
-      { label: 'AI Analytics', href: '#analytics' },
+      { label: 'AI Chatbots', href: '/solutions/ai-chatbots' },
+      { label: 'AI Voice Agents', href: '/solutions/ai-voice-agents' },
+      { label: 'AI Receptionists', href: '/solutions/ai-receptionists' },
+      { label: 'AI Sales Assistants', href: '/solutions/ai-sales-assistants' },
+      { label: 'WhatsApp Automation', href: '/solutions/whatsapp-automation' },
+      { label: 'CRM Automation', href: '/solutions/crm-automation' },
+      { label: 'Workflow Automation', href: '/solutions/workflow-automation' },
+      { label: 'AI Analytics', href: '/solutions/ai-analytics' },
     ],
   },
-  { label: 'Industries', href: '#industries' },
-  { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  {
+    label: 'Industries',
+    href: '/#industries',
+    children: [
+      { label: 'Education', href: '/industries/education' },
+      { label: 'Hospitality', href: '/industries/hospitality' },
+      { label: 'Healthcare', href: '/industries/healthcare' },
+      { label: 'Professional Services', href: '/industries/professional-services' },
+      { label: 'Commerce', href: '/industries/commerce' },
+      { label: 'Real Estate', href: '/industries/real-estate' },
+    ],
+  },
+  { label: 'Case Studies', href: '/#case-studies' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export const BUSINESS_METRICS: BusinessMetric[] = [
